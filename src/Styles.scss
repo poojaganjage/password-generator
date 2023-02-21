@@ -9,10 +9,18 @@
     background: #3b3b98;
 }
 
+@mixin media-gte-sm {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
 .container {
-    width: 350px;
-    margin: 0 auto;
-    padding-top: 200px;
+    @include media-gte-sm {
+        width: 300px;
+        margin: 0 auto;
+        padding-top: 200px;
+    }
 }
 
 .generator {
@@ -74,3 +82,11 @@
         margin-bottom: 25px;
     }
 }
+
+// @media screen and (min-width: 768px) {
+//     .container {
+//         width: 300px;
+//         margin: 0 auto;
+//         padding-top: 200px;
+//     }
+// }
